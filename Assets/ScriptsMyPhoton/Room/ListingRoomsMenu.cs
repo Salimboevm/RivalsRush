@@ -22,7 +22,7 @@ public class ListingRoomsMenu : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         canvasesController.CurrentRoom.Show();
-        content.DestroyChild();
+        //content.DestroyChild();
         roomListings.Clear();
     }
     public override void OnRoomListUpdate(List<RoomInfo> roomList)

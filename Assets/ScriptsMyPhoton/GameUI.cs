@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
@@ -104,6 +105,12 @@ public class GameUI : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+    }
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        wonMenu.SetActive(false);
+        SceneManager.LoadScene(0);
     }
     #endregion
 
