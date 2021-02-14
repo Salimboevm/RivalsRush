@@ -12,8 +12,9 @@ public class PlayerListing : MonoBehaviourPunCallbacks
 
     private Player player;
 
-    public Player Player { get => player; private set => player = value; }
 
+    public Player Player { get => player; private set => player = value; }
+    public bool Ready = false;
     public void SetPlayer(Player playerInfo)
     {
         Player = playerInfo;

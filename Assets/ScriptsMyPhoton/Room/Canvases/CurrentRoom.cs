@@ -10,13 +10,14 @@ public class CurrentRoom : MonoBehaviour
     private LeaveRoomMenu leaveRoomMenu;
 
     private CanvasesController canvasesController;
-    
+
+    public LeaveRoomMenu LeaveRoomMenu { get => leaveRoomMenu; }
 
     public void Initialize(CanvasesController canvasesController)
     {
         this.canvasesController = canvasesController;
         playerListingMenu.Initialize(canvasesController);
-        leaveRoomMenu.Initialize(canvasesController);
+        LeaveRoomMenu.Initialize(canvasesController);
     }
 
     public void Show()

@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerListingMenu : MonoBehaviourPunCallbacks
 {
@@ -10,11 +11,13 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
     private Transform content;
     [SerializeField]
     private PlayerListing prefabListing;
+    [SerializeField]
+    private Text readyText;
 
     private List<PlayerListing> roomListings = new List<PlayerListing>();
 
     private CanvasesController canvasesController;
-
+    private bool readyCheck = false;
     public void Initialize(CanvasesController canvasesController)
     {
         this.canvasesController = canvasesController;
@@ -23,7 +26,7 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
     {
         
         CurrentRoomPlayers();
-
+        SetReadyUp(false);
     }
     public override void OnDisable()
     {
@@ -33,6 +36,24 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
             Destroy(roomListings[i].gameObject);
         }
         roomListings.Clear();
+    }
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+
+        canvasesController.CurrentRoom.LeaveRoomMenu.OnClickLeave();
+
+    }
+    private void SetReadyUp(bool state)
+    {
+        readyCheck = state;
+        if (readyCheck)
+        {
+            readyText.text = "Ready";
+        }
+        else
+        {
+            readyText.text = "Not Ready";
+        }
     }
     private void CurrentRoomPlayers()
     {
@@ -80,9 +101,37 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            for (int i = 0; i < roomListings.Count; i++)
+            {
+                if(roomListings[i].Player != PhotonNetwork.LocalPlayer)
+                {
+                    if (!roomListings[i].Ready)
+                        return;
+                        
+                    
+                }
+            }
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
             PhotonNetwork.LoadLevel(index);
+        }
+    }
+    public void ReadyUp()
+    {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            SetReadyUp(!readyCheck);
+            base.photonView.RPC("RPCChangeReadyState",RpcTarget.MasterClient,PhotonNetwork.LocalPlayer,readyCheck);
+            //PhotonNetwork.RemoveRPCs();
+        }
+    }
+    [PunRPC]
+    private void RPCChangeReadyState(Player player,bool state)
+    {
+        int index = roomListings.FindIndex(x => x.Player == player);
+        if (index != -1)
+        {
+            roomListings[index].Ready = state;
         }
     }
 }
