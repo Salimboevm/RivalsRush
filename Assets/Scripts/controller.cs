@@ -1,8 +1,12 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controller : MonoBehaviour
+/// <summary>
+///monobehaviourpun is for movement of each object is done by its owner 
+/// </summary>
+public class controller : MonoBehaviourPun
 {
     public float speed; //how fast player will move
     public float jumpforce; //force of the jump
@@ -26,35 +30,36 @@ public class controller : MonoBehaviour
    
     void Update()
     {
-        movedirect = Input.GetAxis("Horizontal"); //movement on horizontal scale
-
-        if (Input.GetButtonDown("Jump")&& onground) //check player is on ground
+        if (base.photonView.IsMine)//check who is owner
         {
-            checkjump = true; //if button to jump is pressed player willl jump
+            movedirect = Input.GetAxis("Horizontal"); //movement on horizontal scale
+
+            if (Input.GetButtonDown("Jump") && onground) //check player is on ground
+            {
+                checkjump = true; //if button to jump is pressed player willl jump
+            }
+
+            if (movedirect > 0 && !right)//if facing left then player character flips right
+            {
+                playerflip();
+            }
+            else if (movedirect < 0 && right)//if facing right player flips left
+            {
+                playerflip();
+            }
+
+            rb.velocity = new Vector2(movedirect * speed, rb.velocity.y); //sets the velocity
+
+            if (checkjump)//if player jumps force is applied
+            {
+                //rb.AddForce(new Vector2(0f, jumpforce)); //adds force to jump
+            }
+
+            checkjump = false;
+
+            onground = Physics2D.OverlapCircle(groundcheck.position, radiuscheck, grounds);
+
         }
-
-        if (movedirect > 0 && !right)//if facing left then player character flips right
-        {
-            playerflip();
-        }
-        else if (movedirect < 0 && right)//if facing right player flips left
-        {
-            playerflip();
-        }
-
-        rb.velocity = new Vector2(movedirect * speed, rb.velocity.y); //sets the velocity
-
-       if (checkjump)//if player jumps force is applied
-        {
-            //rb.AddForce(new Vector2(0f, jumpforce)); //adds force to jump
-        }
-
-        checkjump = false;
-
-        onground = Physics2D.OverlapCircle(groundcheck.position, radiuscheck, grounds);
-
-
-
     }
 
 
