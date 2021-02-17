@@ -20,9 +20,8 @@ public class controller : MonoBehaviourPun
     private bool checkjump = false;//player jmumping is false
     private bool onground; //checks if player on ground
 
-
-
-   void Awake() 
+    
+    void Awake() 
     {
         rb = GetComponent<Rigidbody2D>(); //check for rigidbody2d
     }
@@ -60,6 +59,7 @@ public class controller : MonoBehaviourPun
             onground = Physics2D.OverlapCircle(groundcheck.position, radiuscheck, grounds);
 
         }
+
     }
 
 
