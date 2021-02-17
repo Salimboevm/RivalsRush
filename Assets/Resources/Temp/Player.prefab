@@ -279,7 +279,11 @@ MonoBehaviour:
   grounds:
     serializedVersion: 2
     m_Bits: 256
+<<<<<<< HEAD
   radiuscheck: 1
+=======
+  radiuscheck: 0
+>>>>>>> 98332cfb34bad9ac67fc6f4cf75c2790b077e43c
 --- !u!1 &4289333489366090786
 GameObject:
   m_ObjectHideFlags: 0
