@@ -259,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &191749083
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23df50366efafa847bdf7ced2ab2ab98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 4289333489029133544, guid: 4ea0c65cfc21a4f45ba0ae568ba23713,
+  playerPrefab: {fileID: 7845992808301770415, guid: cc0b01a508f2d754ca098e9260058dd9,
     type: 3}
 --- !u!1 &1550658178
 GameObject:
@@ -2727,6 +2727,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3341554297350809310, guid: cc0b01a508f2d754ca098e9260058dd9,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845992808301770408, guid: cc0b01a508f2d754ca098e9260058dd9,
         type: 3}
       propertyPath: m_LocalPosition.x
