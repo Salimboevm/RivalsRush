@@ -449,6 +449,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246475841}
   m_CullTransparentMesh: 0
+--- !u!4 &360150466 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7845992808269116409, guid: cc0b01a508f2d754ca098e9260058dd9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7845992808991303086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &372623822
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +741,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737461729}
   m_CullTransparentMesh: 0
+--- !u!4 &747537799 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7845992808099235426, guid: cc0b01a508f2d754ca098e9260058dd9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7845992808991303086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &813714284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,7 +1851,7 @@ GameObject:
   - component: {fileID: 1590578576}
   - component: {fileID: 1590578578}
   - component: {fileID: 1590578575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2780,6 +2792,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7845992808301770415, guid: cc0b01a508f2d754ca098e9260058dd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7845992808301770410, guid: cc0b01a508f2d754ca098e9260058dd9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cc0b01a508f2d754ca098e9260058dd9, type: 3}
@@ -2798,8 +2815,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7845992808991303087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a89402294fb334f9e6bb9c6a9ac41a, type: 3}
+  m_Script: {fileID: 11500000, guid: a7db02004a220ed4d997218b0d7874da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 2
-  forcejump: 2
+  speed: 1
+  jumpforce: 2
+  checkceiling: {fileID: 360150466}
+  groundcheck: {fileID: 747537799}
+  grounds:
+    serializedVersion: 2
+    m_Bits: 256
+  radiuscheck: 0

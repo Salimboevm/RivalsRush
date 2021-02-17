@@ -263,7 +263,7 @@ MonoBehaviour:
   groundcheck: {fileID: 4289333489366090789}
   grounds:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   radiuscheck: 0
 --- !u!1 &4289333489366090786
 GameObject:
