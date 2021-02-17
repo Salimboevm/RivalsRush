@@ -8,17 +8,18 @@ public class playercontroller : MonoBehaviour
     public float forcejump = 2; //defines the variable for the force of a jump
     private float movedirect; //what direction player will move
     private bool right = true; //player is facing right is true
+    //[SerializeField]
     private Rigidbody2D _rigidbody; //references the rigidbody
     void Start()
     {
-        _rigidbody.GetComponent<Rigidbody2D>();//find the rigidbody2d
+        _rigidbody = GetComponent<Rigidbody2D>();//find the rigidbody2d
     }
 
     // Update is called once per frame
     void Update()
     {
-        var movement = Input.GetAxis("Horizontal"); //enables movement on the horizontal axis 
-        transform.position += new Vector3(movement, 0,0) * Time.deltaTime * movespeed;
+        movedirect = Input.GetAxis("Horizontal"); //enables movement on the horizontal axis 
+        transform.position += new Vector3(movedirect, 0,0) * Time.deltaTime * movespeed;
 
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) <0.001f)//if the button is down the jump will initiate
         {
@@ -37,6 +38,6 @@ public class playercontroller : MonoBehaviour
     void playerflip() //method to flip the player to face the other way
     {
         right = !right; //inverse
-        transform.Rotate(0f, 180f, 0f); //rotate 180 on the y axis
+        _rigidbody.transform.Rotate(0f, 180f, 0f); //rotate 180 on the y axis
     }
 }
