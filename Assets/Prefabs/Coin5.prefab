@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2314630318251138822}
   - component: {fileID: 3953993290584620731}
   - component: {fileID: 41678789916373208}
-  - component: {fileID: 3895376911029137397}
+  - component: {fileID: 637148603541286406}
   m_Layer: 0
   m_Name: Coin5
-  m_TagString: Untagged
+  m_TagString: Coins
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09, y: 0.12}
   m_EdgeRadius: 0
---- !u!114 &3895376911029137397
+--- !u!114 &637148603541286406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8444891335404246335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bda3926cfd8c78f4eaafe2a04aa77bdc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e14076023a810d46943a5dd683654df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bonusCoins: 5

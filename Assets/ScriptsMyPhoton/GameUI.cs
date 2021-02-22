@@ -9,6 +9,19 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
 
+    #region Singleton
+    private static GameUI instance;
+    public static GameUI Instance { get => instance; }
+    public int TempCoins { get => tempCoins; set => tempCoins = value; }
+
+    private void Awake()
+    {
+        if (instance != null)
+            Destroy(instance);
+        instance = this;
+    }
+    #endregion
+    private int tempCoins=0;
     #region Texts Variables
     //text variables for gameplay changing
     [SerializeField]
@@ -29,6 +42,7 @@ public class GameUI : MonoBehaviour
     private GameObject lostMenu;//panel for lost menu
     [SerializeField]
     private GameObject wonMenu;//panel for won menu
+
     #endregion
 
     #region Text Functions
@@ -38,9 +52,9 @@ public class GameUI : MonoBehaviour
     /// returns value to screen
     /// </summary>
     /// <param name="scoreText"></param>
-    public void ScoreText(Text scoreText)
+    public void LapText(short score)
     {
-        this.scoreText.text = scoreText.text;
+        this.scoreText.text = score.ToString();
     }
     /// <summary>
     /// call when player rank changed
@@ -58,9 +72,10 @@ public class GameUI : MonoBehaviour
     /// returns value to the screen
     /// </summary>
     /// <param name="coinsText"></param>
-    public void CoinsText(Text coinsText)
+    public void CoinsText(int coinsTextAmount)
     {
-        this.coinsText.text = coinsText.text;
+        TempCoins += coinsTextAmount;
+        coinsText.text = TempCoins.ToString();
     }
     /// <summary>
     /// call when power up found
@@ -113,6 +128,12 @@ public class GameUI : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     #endregion
-
-
+    private void Update()
+    {
+        coinsText.text = tempCoins.ToString();//updating coins text in each frame
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu();
+        }    
+    }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playercontroller : MonoBehaviourPun
+public class playercontroller : MonoBehaviourPun, IPunObservable
 {
     public float movespeed = 2; //defines the variable for move speed
     public float forcejump = 2; //defines the variable for the force of a jump
@@ -44,5 +44,19 @@ public class playercontroller : MonoBehaviourPun
     {
         right = !right; //inverse
         _rigidbody.transform.Rotate(0f, 180f, 0f); //rotate 180 on the y axis
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //if (stream.IsWriting)
+        //{
+        //    stream.SendNext(transform.position);
+        //    stream.SendNext(transform.rotation);
+        //}
+        //else if(stream.IsReading)
+        //{
+        //    transform.position = (Vector3)stream.ReceiveNext();
+        //    transform.rotation = (Quaternion)stream.ReceiveNext();
+        //}
     }
 }
