@@ -1,16 +1,52 @@
-﻿using System.Collections;
+﻿#region Author
+//Author: Mokhirbek Salimboev
+//SID: 1919019
+//Last Edited: 27/02/21
+#endregion
+using Photon.Pun;
+using Photon.Realtime;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCameraController : MonoBehaviour
+public class PlayerCameraController : MonoBehaviourPun
 {
     [Header("Camera")]
     [SerializeField]
-    private Vector2 maxFollowOffset = new Vector2(-1f, 6f);//maximum value of following offset
+    private Camera myCamera;
+    private InstatiatePlayer player;
+    [Header("")]
     [SerializeField]
-    private Vector2 cameraVel = new Vector2(4f, 0.25f);//velocity of camera
-    [SerializeField]
-    private Transform playerTransform = null;
-    //[SerializeField]
-    //private CinemachineVirtualCamera virtualCamera = null;
+    [Range(1, 10)]
+    private float smoothFactor;// how smooth camera will move
+
+    private void Start()
+    {
+        player = FindObjectOfType<InstatiatePlayer>();
+        if (!photonView.IsMine)//check for owner
+        {
+            //Destroy(myCamera);//destroy other cameras from your scene 
+            myCamera.enabled = false;//deactivate camera
+            myCamera.transform.parent = null;
+            Debug.Log(myCamera.transform.parent);
+            
+        }
+    }
+    /// <summary>
+     /// take target position by offset and player position 
+     /// smoothly move camera 
+     /// </summary>
+    void Follow()
+    {
+        Vector3 targetPos = player.Temp.transform.position;
+        Vector3 smoothPos = Vector3.Lerp(transform.position, targetPos, smoothFactor * Time.fixedDeltaTime);
+        transform.position = smoothPos;
+    }
+    private void FixedUpdate()
+    {
+        if (base.photonView.IsMine)
+        {
+            Follow();
+        }
+    }
 }
