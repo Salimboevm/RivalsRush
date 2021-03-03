@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿#region Author
+//Author: Mokhirbek Salimboev
+//SID: 1919019
+//Last Edited: 27/02/21
+#endregion
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -294,7 +299,13 @@ public class MasterClientMonitor : MonoBehaviourPunCallbacks
 
         _nextSendPingTime = Time.unscaledTime + SEND_PING_INTERVAL;
 
-        base.photonView.RPC("RPC_ReceivePing", RpcTarget.All, PhotonNetwork.GetPing());
+        Player[] players = PhotonNetwork.PlayerList;
+        foreach (Player player in players)
+
+        {
+            base.photonView.RPC("RPC_ReceivePing", RpcTarget.All, player, _nextSendPingTime);
+
+        }
     }
 
     /// <summary>

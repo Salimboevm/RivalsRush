@@ -1970,6 +1970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1208193291}
   - component: {fileID: 1208193292}
+  - component: {fileID: 1208193293}
   m_Layer: 0
   m_Name: SingletonReference
   m_TagString: Untagged
@@ -2004,6 +2005,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _master: {fileID: 11400000, guid: 249d93cf57420c246b52e1efe773e01d, type: 2}
+--- !u!114 &1208193293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208193290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fbe81a4e43cbd4c998f6eb25828f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1218751723
 GameObject:
   m_ObjectHideFlags: 0
