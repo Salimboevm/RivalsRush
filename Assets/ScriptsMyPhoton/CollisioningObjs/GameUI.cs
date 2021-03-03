@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
+    
+    
 
     #region Singleton
     private static GameUI instance;
@@ -22,7 +24,7 @@ public class GameUI : MonoBehaviour
     }
     #endregion
     private int tempCoins=0;
-    #region Texts Variables
+    #region Variables
     //text variables for gameplay changing
     [SerializeField]
     private Text scoreText;//realtime score show text
@@ -32,6 +34,10 @@ public class GameUI : MonoBehaviour
     private Text coinsText;//call when coins are gained/lost
     [SerializeField]
     private Text powerupText;//real time current power up name text
+    [SerializeField]
+    private Text nameOfObj;//name of item
+    [SerializeField]
+    private Image imageOfItem;//self expl, shows image of current item
     #endregion
 
     #region Menu variables
@@ -135,5 +141,15 @@ public class GameUI : MonoBehaviour
         {
             PauseMenu();
         }    
+    }
+    /// <summary>
+    /// func to update booster ui
+    /// text and image 
+    /// </summary>
+    public void BoostUpdate()
+    {
+        BoostItemObject tempBoost = FindObjectOfType<BoostItemObject>();//get booster obj 
+        nameOfObj.text = tempBoost.NameOfObj;//change name 
+        imageOfItem.sprite = tempBoost.ImageOfObj;//change img
     }
 }
