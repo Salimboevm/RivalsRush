@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Realtime;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ public class GameSettings : ScriptableObject
 {
     [SerializeField]
     private string _userName= "";
+    [SerializeField]
+    private int id;
+    bool isOver = false;
+    Player winner;
     public string UserName
     {
         get
@@ -15,4 +20,8 @@ public class GameSettings : ScriptableObject
             return _userName + val.ToString();
         }
     }
+    
+    public int Id { get => id; set => id = value; }
+    public bool IsOver { get => isOver; set => isOver = value; }
+    public Player Winner { get => winner; set => winner = value; }
 }

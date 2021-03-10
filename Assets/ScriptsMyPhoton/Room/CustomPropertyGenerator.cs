@@ -21,7 +21,7 @@ public class CustomPropertyGenerator : MonoBehaviour
     void SetCustomerNumber()
     {
         System.Random rnd = new System.Random();//system random number generator
-        int result = rnd.Next(0, 99);//get random number
+        int result = Master.GameSettings.Id;//get random number
 
         text.text = result.ToString();//initialize it with text 
 
@@ -33,7 +33,7 @@ public class CustomPropertyGenerator : MonoBehaviour
     /// func to set customer number
     /// call it from button 
     /// </summary>
-    public void OnClickButton()
+    public void Start()
     {
         SetCustomerNumber();
     }

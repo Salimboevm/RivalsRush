@@ -27,7 +27,7 @@ public class PlayerCameraController : MonoBehaviourPun
         {
             //Destroy(myCamera);//destroy other cameras from your scene 
             myCamera.enabled = false;//deactivate camera
-            myCamera.transform.parent = null;
+            //myCamera.transform.parent = null;
             Debug.Log(myCamera.transform.parent);
             
         }
@@ -39,12 +39,13 @@ public class PlayerCameraController : MonoBehaviourPun
     void Follow()
     {
         Vector3 targetPos = player.Temp.transform.position;
+        
         Vector3 smoothPos = Vector3.Lerp(transform.position, targetPos, smoothFactor * Time.fixedDeltaTime);
         transform.position = smoothPos;
     }
     private void FixedUpdate()
     {
-        if (base.photonView.IsMine)
+        if (photonView.IsMine)
         {
             Follow();
         }

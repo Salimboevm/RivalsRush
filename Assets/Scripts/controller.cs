@@ -26,8 +26,15 @@ public class controller : MonoBehaviourPun
     {
         rb = GetComponent<Rigidbody2D>(); //check for rigidbody2d
     }
-    
-   
+
+    private void Start()
+    {
+        if (photonView.IsMine)
+        {
+            photonView.ViewID = Master.GameSettings.Id;
+            GameUI.Instance.UserId.text = base.photonView.ViewID.ToString();
+        }
+    }
     void Update()
     {
         if (base.photonView.IsMine)//check who is owner

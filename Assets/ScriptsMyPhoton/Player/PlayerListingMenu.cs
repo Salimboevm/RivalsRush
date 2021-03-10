@@ -13,7 +13,8 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
     private PlayerListing prefabListing;
     [SerializeField]
     private Text readyText;
-
+    [SerializeField]
+    private Text idText;
     private List<PlayerListing> roomListings = new List<PlayerListing>();
 
     private CanvasesController canvasesController;
@@ -43,6 +44,11 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
         canvasesController.CurrentRoom.LeaveRoomMenu.OnClickLeave();
 
     }
+    private void Start()
+    {
+        photonView.ViewID = Master.GameSettings.Id;
+        idText.text = photonView.ViewID.ToString();
+    }
     private void SetReadyUp(bool state)
     {
         readyCheck = state;
@@ -54,6 +60,7 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
         {
             readyText.text = "Not Ready";
         }
+        
     }
     private void CurrentRoomPlayers()
     {
@@ -80,6 +87,7 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
             if (listing != null)
             {
                 listing.SetPlayer(newPlayer);
+                
                 roomListings.Add(listing);
             }
         }

@@ -11,7 +11,7 @@ public class CreateRoom : MonoBehaviourPunCallbacks
     private Text roomName;
     
     private CanvasesController canvasesController;
-
+    
     public void Initialize(CanvasesController canvasesController)
     {
         this.canvasesController = canvasesController;
@@ -25,6 +25,8 @@ public class CreateRoom : MonoBehaviourPunCallbacks
         opt.BroadcastPropsChangeToAll = true;
         opt.PublishUserId = true;
         opt.MaxPlayers = 4;
+        Master.GameSettings.Id++;
+        
         PhotonNetwork.JoinOrCreateRoom(roomName.text, opt, TypedLobby.Default);
     }
     public override void OnCreatedRoom()

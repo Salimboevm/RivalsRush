@@ -17,7 +17,7 @@ public class Master : ScriptableObjectSingleton<Master>
 
     [SerializeField]
     private GameSettings _gameSettings;//game settings script
-
+  
     [SerializeField]
     private List<NetworkPrefab> networkPrefabs = new List<NetworkPrefab>();//list of prefabs which could be instantiated 
     //property for game settings
@@ -26,6 +26,7 @@ public class Master : ScriptableObjectSingleton<Master>
             return Instance._gameSettings;
         } 
     }
+
 
     /// <summary>
     /// function for instantiate player gameobjects

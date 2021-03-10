@@ -11,10 +11,6 @@ public class Connect : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
         //AuthenticationValues authenticationValues = new AuthenticationValues("0");
         //PhotonNetwork.AuthValues = authenticationValues;
-        PhotonNetwork.SendRate = 40;
-        PhotonNetwork.SerializationRate = 20;
-        PhotonNetwork.SendRate = 70;
-        PhotonNetwork.SerializationRate = 5;
 
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.NickName = Master.GameSettings.UserName;

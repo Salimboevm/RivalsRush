@@ -13,10 +13,16 @@ public class CanvasesController : MonoBehaviour
     [SerializeField]
     private CurrentRoom currentRoom;//variable to find from editor
     public CurrentRoom CurrentRoom { get { return currentRoom; } }//variable to get access from other scripts
-
+    
     private void Awake()
     {
         Initialize();
+    }
+    void Start()
+    {
+        Master.GameSettings.Id = 0;
+        Master.GameSettings.IsOver = false;
+        Master.GameSettings.Winner = null;
     }
     private void Initialize()
     {

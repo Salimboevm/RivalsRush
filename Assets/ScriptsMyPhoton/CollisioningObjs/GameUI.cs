@@ -1,7 +1,9 @@
 ﻿//Author: Mokhirbek Salimboev
 //Last Edit: 08/02/2021
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +17,7 @@ public class GameUI : MonoBehaviour
     private static GameUI instance;
     public static GameUI Instance { get => instance; }
     public int TempCoins { get => tempCoins; set => tempCoins = value; }
+    public Text UserId { get => userId; set => userId = value; }
 
     private void Awake()
     {
@@ -38,6 +41,10 @@ public class GameUI : MonoBehaviour
     private Text nameOfObj;//name of item
     [SerializeField]
     private Image imageOfItem;//self expl, shows image of current item
+    [SerializeField]
+    private Text winnerCoinsText;//text object, to show total amount of coins in the end
+    [SerializeField]
+    private Text userId;
     #endregion
 
     #region Menu variables
@@ -118,6 +125,9 @@ public class GameUI : MonoBehaviour
     public void Win()
     {
         wonMenu.SetActive(true);
+        winnerCoinsText.text = tempCoins.ToString();
+        Master.GameSettings.IsOver = true;
+        
     }
     /// <summary>
     /// call when player resumes game
@@ -131,6 +141,8 @@ public class GameUI : MonoBehaviour
     {
         Time.timeScale = 1;
         wonMenu.SetActive(false);
+        PhotonNetwork.LeaveRoom(true);
+        
         SceneManager.LoadScene(0);
     }
     #endregion

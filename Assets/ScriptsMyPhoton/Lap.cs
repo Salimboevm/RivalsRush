@@ -25,7 +25,19 @@ public class Lap : MonoBehaviourPun
                 GameUI.Instance.LapText(currentLap);//change  currentlap text
                 if (currentLap >= laps)//check current lap is greater than laps 
                 {
-                    GameUI.Instance.Win();//winner is found
+                    Master.GameSettings.Winner = photonView.Controller;
+                    if (Master.GameSettings.IsOver ==true && Master.GameSettings.Winner == photonView.Controller)
+                    {
+                        print(Master.GameSettings.IsOver);
+                        GameUI.Instance.Win();//winner is found}
+                        Master.GameSettings.IsOver = false;
+                    }
+                    else
+                    {
+                        print(Master.GameSettings.IsOver);
+
+                        GameUI.Instance.GameOver();
+                    }
                 }
             }
         }

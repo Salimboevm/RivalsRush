@@ -2219,5 +2219,6 @@ namespace Photon.Realtime
             copy.UserId = this.UserId;
             return copy;
         }
+
     }
 }
