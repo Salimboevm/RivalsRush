@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿#region Author
 //Author: Mokhirbek Salimboev
 //SID: 1919019
@@ -8,17 +7,13 @@ using ExitGames.Client.Photon.StructWrapping;
 using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
-=======
-﻿using System.Collections;
->>>>>>> parent of f024b86 (camera following)
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCameraController : MonoBehaviour
+public class PlayerCameraController : MonoBehaviourPunCallBacks
 {
     [Header("Camera")]
     [SerializeField]
-<<<<<<< HEAD
     private Camera myCamera;
     private InstatiatePlayer player;
     private Transform target;
@@ -76,13 +71,4 @@ public class PlayerCameraController : MonoBehaviour
             Follow();
         }
     }
-=======
-    private Vector2 maxFollowOffset = new Vector2(-1f, 6f);//maximum value of following offset
-    [SerializeField]
-    private Vector2 cameraVel = new Vector2(4f, 0.25f);//velocity of camera
-    [SerializeField]
-    private Transform playerTransform = null;
-    //[SerializeField]
-    //private CinemachineVirtualCamera virtualCamera = null;
->>>>>>> parent of f024b86 (camera following)
 }
