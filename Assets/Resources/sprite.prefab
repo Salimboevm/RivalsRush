@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1164464952}
   - component: {fileID: 1164464951}
   - component: {fileID: 5906245675682879891}
+  - component: {fileID: 6586623432388871645}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -96,6 +97,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc9811a0ae11b64eaa7f97284d809ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothFactor: 1
+--- !u!114 &6586623432388871645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164464949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3927efb21fa5c0d46b0f8eaeaa849c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCamera: {fileID: 1164464952}
   smoothFactor: 1
 --- !u!1 &7845992808099235429
 GameObject:
@@ -335,9 +350,9 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 0
-  Synchronization: 1
-  OwnershipTransfer: 1
+  observableSearch: 1
+  Synchronization: 2
+  OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3580557789346874512}
   - {fileID: 6239594734922756929}
@@ -356,8 +371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 0
-  ShowParameterInspector: 0
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
   m_SynchronizeParameters: []
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -407,7 +422,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7845992808301770415}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3927efb21fa5c0d46b0f8eaeaa849c02, type: 3}
   m_Name: 

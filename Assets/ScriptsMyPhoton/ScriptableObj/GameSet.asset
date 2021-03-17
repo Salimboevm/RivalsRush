@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameSet
   m_EditorClassIdentifier: 
   _userName: Default
+  id: 0

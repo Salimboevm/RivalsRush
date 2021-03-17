@@ -9,6 +9,7 @@ public class playercontroller : MonoBehaviourPun
     public float forcejump = 2; //defines the variable for the force of a jump
     private float movedirect; //what direction player will move
     private bool right = true; //player is facing right is true
+  
     //[SerializeField]
     private Rigidbody2D _rigidbody; //references the rigidbody
     void Start()
@@ -22,6 +23,7 @@ public class playercontroller : MonoBehaviourPun
     {
         if (base.photonView.IsMine)//check who is owner
         {
+            
             movedirect = Input.GetAxis("Horizontal"); //enables movement on the horizontal axis 
             transform.position += new Vector3(movedirect, 0, 0) * Time.deltaTime * movespeed;
 

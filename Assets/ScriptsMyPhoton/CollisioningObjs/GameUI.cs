@@ -125,9 +125,7 @@ public class GameUI : MonoBehaviour
     public void Win()
     {
         wonMenu.SetActive(true);
-        winnerCoinsText.text = tempCoins.ToString();
-        Master.GameSettings.IsOver = true;
-        
+        winnerCoinsText.text = tempCoins.ToString();        
     }
     /// <summary>
     /// call when player resumes game

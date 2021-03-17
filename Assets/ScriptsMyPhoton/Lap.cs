@@ -13,7 +13,11 @@ public class Lap : MonoBehaviourPun
 {
     private short laps=3;//laps of this game
     private short currentLap = 0;//current going lap
-
+    private bool winnerFound;
+    private void Start()
+    {
+        winnerFound = false;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Lap"))//check for lap tag 
@@ -21,25 +25,25 @@ public class Lap : MonoBehaviourPun
             if (base.photonView.IsMine)//check owner
             {
                 currentLap++;//increase current lap
-                
                 GameUI.Instance.LapText(currentLap);//change  currentlap text
                 if (currentLap >= laps)//check current lap is greater than laps 
                 {
                     Master.GameSettings.Winner = photonView.Controller;
-                    if (Master.GameSettings.IsOver ==true && Master.GameSettings.Winner == photonView.Controller)
+                    
+                    print(winnerFound);
+                    if (Master.GameSettings.IsOver == false && Master.GameSettings.Winner == photonView.Controller && !winnerFound )
                     {
-                        print(Master.GameSettings.IsOver);
                         GameUI.Instance.Win();//winner is found}
-                        Master.GameSettings.IsOver = false;
+                        winnerFound = true;
                     }
                     else
-                    {
-                        print(Master.GameSettings.IsOver);
-
+                    { 
                         GameUI.Instance.GameOver();
                     }
                 }
             }
+            Master.GameSettings.IsOver = winnerFound;
+            print(Master.GameSettings.IsOver);
         }
     }
 }

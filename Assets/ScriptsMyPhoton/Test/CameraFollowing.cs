@@ -9,6 +9,11 @@ public class CameraFollowing : MonoBehaviour
     [SerializeField]
     [Range(1, 10)]
     private float smoothFactor;// how smooth camera will move
+
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         if (player != null)

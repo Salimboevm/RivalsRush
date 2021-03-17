@@ -31,7 +31,7 @@ public class controller : MonoBehaviourPun
     {
         if (photonView.IsMine)
         {
-            photonView.ViewID = Master.GameSettings.Id;
+            //photonView.ViewID = Master.GameSettings.Id;
             GameUI.Instance.UserId.text = base.photonView.ViewID.ToString();
         }
     }
