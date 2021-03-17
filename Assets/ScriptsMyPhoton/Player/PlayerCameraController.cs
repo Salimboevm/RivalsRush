@@ -10,7 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCameraController : MonoBehaviourPunCallBacks
+public class PlayerCameraController : MonoBehaviourPunCallbacks
 {
     [Header("Camera")]
     [SerializeField]
