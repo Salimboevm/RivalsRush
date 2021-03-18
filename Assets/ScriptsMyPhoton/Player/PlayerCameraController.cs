@@ -24,28 +24,16 @@ public class PlayerCameraController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        //player = FindObjectOfType<InstatiatePlayer>();
-        //if (!photonView.IsMine)//check for owner
-        //{
-        //    //Destroy(myCamera);//destroy other cameras from your scene 
-        //    //myCamera.enabled = false;//deactivate camera
-        //    //myCamera.transform.parent = null;
-        //    Debug.Log(myCamera.transform.parent);
-        //    
-        //}
-        if (!photonView.IsMine)
+        player = FindObjectOfType<InstatiatePlayer>();
+        if (!photonView.IsMine)//check for owner
         {
-            Destroy(myCamera);
+            //Destroy(myCamera);//destroy other cameras from your scene 
+            myCamera.enabled = false;//deactivate camera
+            
+            Debug.Log(myCamera.transform.parent);
+            
         }
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject player in players)
-        {
-            if (PhotonView.Get(player).IsMine)
-            {
-                this.target = player.transform;
-                break;
-            }
-        }
+        myCamera.transform.parent = null;
     }
     /// <summary>
      /// take target position by offset and player position 
@@ -53,15 +41,17 @@ public class PlayerCameraController : MonoBehaviourPunCallbacks
      /// </summary>
     void Follow()
     {
-        //Vector3 targetPos = player.Temp.transform.position;
+        Vector3 targetPos = player.transform.position;
+        
+        Vector3 smoothPos = Vector3.Lerp(transform.position, targetPos, smoothFactor * Time.fixedDeltaTime);
+        smoothPos.z = -10f;
+        myCamera.transform.position = smoothPos;
+        
+        //Vector3 targetPos = target.position;
+        //targetPos.z = -10f;
         //
         //Vector3 smoothPos = Vector3.Lerp(transform.position, targetPos, smoothFactor * Time.fixedDeltaTime);
         //transform.position = smoothPos;
-        Vector3 targetPos = target.position;
-        targetPos.z = -10f;
-        
-        Vector3 smoothPos = Vector3.Lerp(transform.position, targetPos, smoothFactor * Time.fixedDeltaTime);
-        transform.position = smoothPos;
         
     }
     private void FixedUpdate()

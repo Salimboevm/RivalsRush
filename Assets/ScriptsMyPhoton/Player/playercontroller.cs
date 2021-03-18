@@ -15,7 +15,7 @@ public class playercontroller : MonoBehaviourPun, IPunObservable
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();//find the rigidbody2d
-        Camera.main.GetComponent<CameraFollowing>().SetTarget(photonView.transform);
+        //Camera.main.GetComponent<CameraFollowing>().SetTarget(photonView.transform);
     }
     
     // Update is called once per frame
