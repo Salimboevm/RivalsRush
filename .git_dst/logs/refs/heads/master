@@ -1,0 +1,26 @@
+0000000000000000000000000000000000000000 d69809d5d64e73ae4d58e0e5d78b088ad6c1c801 Salimboevm <salimboyevm@gmail.com> 1616000822 +0500	clone: from https://github.com/Salimboevm/RivalsRush.git
+d69809d5d64e73ae4d58e0e5d78b088ad6c1c801 e2a93916acf4376b3bc2f5c7812a4567d1cca116 Salimboevm <salimboyevm@gmail.com> 1616001670 +0500	revert: Revert "r"
+e2a93916acf4376b3bc2f5c7812a4567d1cca116 8298e859949378fa97968357274f7834fd365f39 Salimboevm <salimboyevm@gmail.com> 1616001704 +0500	revert: Revert "Revert "r""
+8298e859949378fa97968357274f7834fd365f39 3f10e588ad4fd656d973d1b9e8329539050daf37 Salimboevm <salimboyevm@gmail.com> 1616001776 +0500	revert: Revert "Revert "fixed camera glitch""
+3f10e588ad4fd656d973d1b9e8329539050daf37 730c0fd94c730ce464d390bc36dcf19d4504d1b4 Salimboevm <salimboyevm@gmail.com> 1616002682 +0500	pull --progress origin: Merge made by the 'recursive' strategy.
+730c0fd94c730ce464d390bc36dcf19d4504d1b4 d7f7a55e6485bcd1b8a446c93213af924b3fd16a Salimboevm <salimboyevm@gmail.com> 1616007269 +0500	commit: test
+d7f7a55e6485bcd1b8a446c93213af924b3fd16a 6a820bc21a3ce399751be64c82a88bcfeb26cea1 Salimboevm <salimboyevm@gmail.com> 1616007294 +0500	pull: Merge made by the 'recursive' strategy.
+6a820bc21a3ce399751be64c82a88bcfeb26cea1 162ed2eecad24d296048d8781ed64956fc5badc4 Salimboevm <salimboyevm@gmail.com> 1616049927 +0500	commit: a
+162ed2eecad24d296048d8781ed64956fc5badc4 282abc70ddd5e8d77ffc17bc6aec70f576a7c470 Salimboevm <salimboyevm@gmail.com> 1616422207 +0500	commit: working
+282abc70ddd5e8d77ffc17bc6aec70f576a7c470 3fd52e0b7b5a6693d9cb931e118a3947b7a711df Salimboevm <salimboyevm@gmail.com> 1616423874 +0500	revert: Revert "Update PlayerCameraController.cs"
+3fd52e0b7b5a6693d9cb931e118a3947b7a711df 40a71ca30e7911d35eb3858cfb6236499f87ccec Salimboevm <salimboyevm@gmail.com> 1616423897 +0500	revert: Revert "Update PlayerCameraController.cs"
+40a71ca30e7911d35eb3858cfb6236499f87ccec 7c1a4faf47eced9294d1c04c490e4f0626419e26 Salimboevm <salimboyevm@gmail.com> 1616424009 +0500	reset: moving to 7c1a4fa
+7c1a4faf47eced9294d1c04c490e4f0626419e26 93a29c746ff7294cb9454e54878ed496d7e2f107 Salimboevm <salimboyevm@gmail.com> 1616424116 +0500	reset: moving to 93a29c7
+93a29c746ff7294cb9454e54878ed496d7e2f107 45000260f9497e8b6b02d758e766f039149c97bf Salimboevm <salimboyevm@gmail.com> 1616424302 +0500	commit: working but not the latest version
+45000260f9497e8b6b02d758e766f039149c97bf 19b4af4e06637a951fd4a1265eb3bafb9135bcbc Salimboevm <salimboyevm@gmail.com> 1616424634 +0500	pull origin master --allow-unrelated-histories: Merge made by the 'recursive' strategy.
+19b4af4e06637a951fd4a1265eb3bafb9135bcbc 6242706fc586530f6310704f93eb304d67b8b672 Salimboevm <salimboyevm@gmail.com> 1616428163 +0500	reset: moving to 6242706
+6242706fc586530f6310704f93eb304d67b8b672 ad644300051b346449b504bd9046fec621aa86c5 Salimboevm <salimboyevm@gmail.com> 1616428370 +0500	commit: working but older version
+ad644300051b346449b504bd9046fec621aa86c5 f108020cd634b5c63bbbb3d26ff5e892af070317 Salimboevm <salimboyevm@gmail.com> 1616428389 +0500	pull: Merge made by the 'recursive' strategy.
+f108020cd634b5c63bbbb3d26ff5e892af070317 6242706fc586530f6310704f93eb304d67b8b672 Salimboevm <salimboyevm@gmail.com> 1616428465 +0500	reset: moving to 6242706
+6242706fc586530f6310704f93eb304d67b8b672 40a71ca30e7911d35eb3858cfb6236499f87ccec Salimboevm <salimboyevm@gmail.com> 1616428989 +0500	pull: Fast-forward
+40a71ca30e7911d35eb3858cfb6236499f87ccec 6242706fc586530f6310704f93eb304d67b8b672 Salimboevm <salimboyevm@gmail.com> 1616429393 +0500	reset: moving to 6242706
+6242706fc586530f6310704f93eb304d67b8b672 40a71ca30e7911d35eb3858cfb6236499f87ccec Salimboevm <salimboyevm@gmail.com> 1616429502 +0500	pull: Fast-forward
+40a71ca30e7911d35eb3858cfb6236499f87ccec 6242706fc586530f6310704f93eb304d67b8b672 Salimboevm <salimboyevm@gmail.com> 1616430009 +0500	reset: moving to 6242706
+6242706fc586530f6310704f93eb304d67b8b672 f38d533434b0c749100c57062f25132cadcf72ab Salimboevm <salimboyevm@gmail.com> 1616430303 +0500	commit: Working version
+f38d533434b0c749100c57062f25132cadcf72ab b595036dd81543ff0685bf2500dc6d28722a8793 Salimboevm <salimboyevm@gmail.com> 1616430356 +0500	pull --progress origin: Merge made by the 'recursive' strategy.
+b595036dd81543ff0685bf2500dc6d28722a8793 6242706fc586530f6310704f93eb304d67b8b672 Salimboevm <salimboyevm@gmail.com> 1616430785 +0500	reset: moving to 6242706

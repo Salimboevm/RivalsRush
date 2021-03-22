@@ -1,3 +1,4 @@
-rep "RivalsRush@UniProject@cloud"
+repository "RivalsRush@UniProject@cloud"
   path "/"
-    smartbranch "/main" changeset "11"    
+    br "/main"
+    co "/main"
