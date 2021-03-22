@@ -1,0 +1,3 @@
+rep "RivalsRush@UniProject@cloud"
+  path "/"
+    smartbranch "/main" changeset "11"    
