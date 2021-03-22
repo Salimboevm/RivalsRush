@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    public playercontroller characterController;
+    public PlayerController characterController;
     public int bonusSpeed;
 
     private void Awake()
     {
-        characterController = FindObjectOfType<playercontroller>();
+        characterController = FindObjectOfType<PlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) //Checks if the player enters the collider and increses his movement speed.

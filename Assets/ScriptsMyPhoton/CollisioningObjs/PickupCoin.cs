@@ -17,13 +17,11 @@ public class PickupCoin : MonoBehaviourPun
         {
             if (base.photonView.IsMine)
             {
+                Debug.Log("Collide");
                 GameUI.Instance.CoinsText(FindObjectOfType<Coin>().BonusCoins);
             }
             Destroy(collision.gameObject);
         }
     }
-    private void FolloW()
-    {
-        
-    }
+
 }

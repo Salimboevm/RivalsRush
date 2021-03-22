@@ -46,7 +46,7 @@ public class PlayerListingMenu : MonoBehaviourPunCallbacks
     }
     private void Start()
     {
-        photonView.ViewID = Master.GameSettings.Id;
+        //photonView.ViewID = Master.GameSettings.Id;
         idText.text = photonView.ViewID.ToString();
     }
     private void SetReadyUp(bool state)
